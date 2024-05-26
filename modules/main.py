@@ -31,7 +31,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hi!\n\nGive /m1 Command to Downlaod From a Text file.\n")
+    editable = await m.reply_text("Hi!\n\nGive /m1_txt Command to Downlaod From a Text file.\n")
 
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
@@ -45,7 +45,7 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["m1"]))
+@bot.on_message(filters.command(["m1_txt"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('Hi\n\nTO download a test file send here » ')
     input: Message = await bot.listen(editable.chat.id)
@@ -166,8 +166,8 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[ 🎬 ] Vid ID  :** {str(count).zfill(3)}\n**Title :** {name1} m1 {res} Alex.mp4\n**Batch Name :** {raw_text0}\n**Extracted By ➤ ** {raw_text3}\n\n'
-                cc1 = f'**[ 📕 ] Pdf ID :** {str(count).zfill(3)}\n**Title :** {name1} m1.pdf \n**Batch Name :** {raw_text0}\n**Extracted By ➤ ** {raw_text3}\n\n'
+                cc = f'**[ 🎬 ] Vid ID  :** {str(count).zfill(3)}\n**Title :** {name1} m1_txt {res} Alex.mp4\n**Batch Name :** {raw_text0}\n**Extracted By ➤ ** {raw_text3}\n\n'
+                cc1 = f'**[ 📕 ] Pdf ID :** {str(count).zfill(3)}\n**Title :** {name1} m1_txt.pdf \n**Batch Name :** {raw_text0}\n**Extracted By ➤ ** {raw_text3}\n\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
